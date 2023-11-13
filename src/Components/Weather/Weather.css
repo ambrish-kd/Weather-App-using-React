@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins');
 
 body {
+    background-color: #03001C;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -84,4 +85,66 @@ body {
 
 .text {
     font-size: 15px;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 480px) {
+    body {
+        background-color: #03001C;
+    }
+
+    .container {
+        width: 370px;
+        height: 550px;
+    }
+
+    .top-bar {
+        gap: 5px;
+        padding-top: 30px;
+    }
+
+    .top-bar input {
+        width: 240px;
+        height: 40px;
+        border-radius: 30px;
+        padding-left: 30px;
+        font-size: 12px;
+    }
+    
+    .search-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 30px;
+    }
+
+    .search-icon-img {
+        height: 0.7rem;
+    }
+    
+    .weather-temp {
+        font-size: 45px;
+        font-weight: 700;
+    }
+    
+    .weather-location {
+        font-size: 25px;
+    }
+    
+    .data-container {
+        margin-top: 40px;
+    }
+    
+    .element {
+        margin: auto;
+        gap: 5px;
+    }
+    
+    .data {
+        font-size: 20px;
+    }
+    
+    .text {
+        font-size: 11px;
+    }
 }

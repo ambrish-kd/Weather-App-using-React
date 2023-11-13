@@ -1,10 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import "./Weather.css"
 
 const Weather = () => {
     const api_key = process.env.REACT_APP_API_KEY
     const [weatherIcon, setWeatherIcon] = useState("./images/clear.png")
     
+    // Detecting enter key
+    useEffect(() => {
+        document.addEventListener('keydown', detectKey)
+        return () => {
+            document.removeEventListener('keydown', detectKey)
+        }
+    })
+    const detectKey = (e) => {
+        if(e.key === 'Enter') {
+            search()
+        }
+    }
+
+    // Search function
     const search = async () => {
         const element = document.getElementsByClassName("cityInput")
         if(element[0].value === "") {
@@ -37,12 +51,13 @@ const Weather = () => {
             setWeatherIcon("./images/clear.png")
         }
     }
+    
     return (
         <div className='container'>
             <div className="top-bar">
                 <input type="text" className='cityInput' placeholder='Search city' />
                 <div className="search-icon" onClick={() => {search()}}>
-                    <img src="./images/search.png" alt=" " />
+                    <img className='search-icon-img' src="./images/search.png" alt=" " />
                 </div>
             </div>
             <div className="weather-image">
